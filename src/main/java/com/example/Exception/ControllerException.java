@@ -24,7 +24,7 @@ public class ControllerException {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(value=HttpStatus.NOT_FOUND)
 	public ErrorMessage  methodtFounexecption(MethodArgumentNotValidException ex,WebRequest re) {
-		
+		System.out.println();
 		List<String> errorNames=ex.getBindingResult().getFieldErrors().stream().map(x-> x.getDefaultMessage())
 				.collect(Collectors.toList());
 		ErrorMessage error=new ErrorMessage(
